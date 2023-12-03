@@ -1,4 +1,4 @@
-pub fn replace1andtell(a: String, to_find: &str, to_replace: &str) -> Option<String> {
+pub fn replace_if_1(a: String, to_find: &str, to_replace: &str) -> Option<String> {
     match a.find(to_find) {
         Some(_) => Some(a.replacen(to_find, to_replace, 1)),
         None => None,

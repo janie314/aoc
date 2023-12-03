@@ -1,4 +1,4 @@
-use crate::helpers::{replace1andtell, str2num};
+use crate::helpers::{replace_if_1, str2num};
 use std::cmp::max;
 
 pub fn a(input: String) -> i64 {
@@ -12,11 +12,11 @@ pub fn a(input: String) -> i64 {
                 .split(";")
                 .map(|u| {
                     u.split(",")
-                        .map(|v| match replace1andtell(v.to_string(), "green", "") {
+                        .map(|v| match replace_if_1(v.to_string(), "green", "") {
                             Some(w) => str2num(&w.trim()) <= 13,
-                            None => match replace1andtell(v.to_string(), "red", "") {
+                            None => match replace_if_1(v.to_string(), "red", "") {
                                 Some(w) => str2num(&w.trim()) <= 12,
-                                None => match replace1andtell(v.to_string(), "blue", "") {
+                                None => match replace_if_1(v.to_string(), "blue", "") {
                                     Some(w) => str2num(&w.trim()) <= 14,
                                     None => true,
                                 },
@@ -67,19 +67,19 @@ pub fn b(input: String) -> i64 {
                 .split(";")
                 .map(|u| {
                     u.split(",")
-                        .map(|v| match replace1andtell(v.to_string(), "green", "") {
+                        .map(|v| match replace_if_1(v.to_string(), "green", "") {
                             Some(w) => Game {
                                 red: 0,
                                 blue: 0,
                                 green: str2num(&w.trim()),
                             },
-                            None => match replace1andtell(v.to_string(), "red", "") {
+                            None => match replace_if_1(v.to_string(), "red", "") {
                                 Some(w) => Game {
                                     red: str2num(&w.trim()),
                                     blue: 0,
                                     green: 0,
                                 },
-                                None => match replace1andtell(v.to_string(), "blue", "") {
+                                None => match replace_if_1(v.to_string(), "blue", "") {
                                     Some(w) => Game {
                                         red: 0,
                                         blue: str2num(&w.trim()),
