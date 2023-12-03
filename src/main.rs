@@ -1,6 +1,7 @@
 use clap::Parser;
 use std::fs;
 
+mod helpers;
 mod prob01;
 mod prob02;
 
