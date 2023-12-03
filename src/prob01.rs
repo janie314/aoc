@@ -43,11 +43,8 @@ pub fn b(input: String) -> i64 {
     let newinput = input
         .split('\n')
         .map(|s| {
-            let mut res = String::from(s);
-            for (w, i) in REPL {
-                res = res.replace(w, i);
-            }
-            return res;
+            REPL.into_iter()
+                .fold(s.to_string(), |a, (w, i)| a.replace(w, i))
         })
         .reduce(|a, b| format!("{a}\n{b}"))
         .unwrap_or_default();
