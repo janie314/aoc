@@ -8,7 +8,6 @@ pub fn a(input: String) -> i64 {
             let n = first.checked_ilog10().unwrap_or_default();
             let first_digit = (first - (first % 10_i64.pow(n))) / 10_i64.pow(n);
             let last_digit = last % 10;
-            println!("{first_digit}\t{last_digit}");
             10 * first_digit + last_digit
         })
         .reduce(|a, b| a + b)

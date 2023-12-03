@@ -32,7 +32,7 @@ fn main() {
         if args.sub_prob == "a" {
             println!("{}", prob02::a(input));
         } else if args.sub_prob == "b" {
-            println!("{}", prob01::b(input));
+            println!("{}", prob02::b(input));
         }
     }
 }
