@@ -1,8 +1,8 @@
+use clap::Parser;
 use std::fs;
 
-use clap::Parser;
-
 mod prob01;
+mod prob02;
 
 /// "#AOC2023"
 #[derive(Parser, Debug)]
@@ -25,6 +25,12 @@ fn main() {
     if args.prob == 1 {
         if args.sub_prob == "a" {
             println!("{}", prob01::a(input));
+        } else if args.sub_prob == "b" {
+            println!("{}", prob01::b(input));
+        }
+    } else if args.prob == 2 {
+        if args.sub_prob == "a" {
+            println!("{}", prob02::a(input));
         } else if args.sub_prob == "b" {
             println!("{}", prob01::b(input));
         }

@@ -15,13 +15,6 @@ pub fn a(input: String) -> i64 {
         .unwrap_or_default()
 }
 
-fn replace1andtell(a: String, to_find: &str, to_replace: &str) -> Option<String> {
-    match a.find(to_find) {
-        Some(_) => Some(a.replacen(to_find, to_replace, 1)),
-        None => None,
-    }
-}
-
 const REPL: [(&str, &str); 17] = [
     ("oneight", "o18t"),
     ("twone", "t21e"),
