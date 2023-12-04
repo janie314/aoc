@@ -12,6 +12,10 @@ n = grid[0].length
 
 stars = {}
 
+# observation; we can find 'parts' by only finding numbers that are adjacent to '*'s. 
+# if a number is not adjacent to a '*', then it is not relevant in this problem
+# so, find all parts (numbers adjacent to a '*'). for each part, tag the part's stars with its part number
+# then at the end, we'll go back and find which stars are tagged with exactly two parts
 parts = grid.map.with_index do |row, i|
   matches(row).map do |x, num|
     y = x + num.length
