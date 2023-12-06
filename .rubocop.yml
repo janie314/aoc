@@ -87,7 +87,6 @@ AllCops:
   Exclude:
     - 'target/**/*'
     - 'node_modules/**/*'
-    - 'src/**/*'
     - 'tmp/**/*'
     - 'vendor/**/*'
     - '.git/**/*'
